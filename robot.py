@@ -17,7 +17,7 @@ class Robot(object):
                 self.direction = self.directions.index(orientation)
                 return self
 
-    def move(self):
+    def move(self) -> object:
         """Moves the Robot in the facing direction, but ignoring the command if
         moving would result in the robot going off the table.
         """
@@ -32,17 +32,17 @@ class Robot(object):
         self.coordinates = self.x, self.y
         return self
 
-    def right(self):
+    def right(self) -> object:
         """Turns the robot to the right of the given facing."""
         self.direction = (self.direction - 1) % 4
         return self
 
-    def left(self):
+    def left(self) -> object:
         """Turns the robot to the left of the given facing."""
         self.direction = (self.direction + 1) % 4
         return self
 
-    def report(self):
+    def report(self) -> object:
         """Writes the coordinates and facing direction of the robot to the log console."""
         print(f"{self.x},{self.y},{self.directions[self.direction]}")
         return self
